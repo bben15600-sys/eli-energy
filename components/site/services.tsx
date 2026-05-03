@@ -7,13 +7,7 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { SpotlightCard } from "@/components/site/spotlight-card";
 
 type Service = {
   icon: LucideIcon;
@@ -78,22 +72,19 @@ export function Services() {
 
         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
           {services.map((service) => (
-            <Card
-              key={service.title}
-              className="group/service gap-3 p-2 transition-all hover:-translate-y-1 hover:shadow-lg hover:ring-primary/40"
-            >
-              <CardHeader className="px-4 pt-4">
-                <span className="mb-3 inline-flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover/service:bg-primary group-hover/service:text-primary-foreground">
+            <SpotlightCard key={service.title} className="h-full">
+              <div className="flex h-full flex-col gap-3 p-6">
+                <span className="inline-flex size-12 items-center justify-center rounded-xl border border-primary/15 bg-gradient-to-br from-primary/15 to-primary/5 text-primary shadow-inner shadow-primary/10 transition-all duration-300 group-hover/spotlight:border-primary/40 group-hover/spotlight:from-primary group-hover/spotlight:to-primary group-hover/spotlight:text-primary-foreground group-hover/spotlight:shadow-md group-hover/spotlight:shadow-primary/30">
                   <service.icon className="size-5" />
                 </span>
-                <CardTitle className="text-lg">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="px-4 pb-4">
-                <CardDescription className="leading-relaxed">
+                <h3 className="text-lg font-semibold tracking-tight">
+                  {service.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
                   {service.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
+                </p>
+              </div>
+            </SpotlightCard>
           ))}
         </div>
       </div>
