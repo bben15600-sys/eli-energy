@@ -15,6 +15,7 @@ export const site = {
 export const nav = [
   { href: "#services", label: "שירותים" },
   { href: "#about", label: "עלינו" },
+  { href: "#testimonials", label: "ביקורות" },
   { href: "#process", label: "תהליך העבודה" },
   { href: "#contact", label: "צור קשר" },
 ] as const;
