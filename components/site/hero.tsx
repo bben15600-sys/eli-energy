@@ -2,6 +2,7 @@ import { ArrowLeft, MessageCircle, Phone, ShieldCheck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AnimatedCounter } from "@/components/site/animated-counter";
+import { Magnetic } from "@/components/site/magnetic";
 import { site } from "@/components/site/site-config";
 
 export function Hero() {
@@ -49,18 +50,20 @@ export function Hero() {
             className="animate-appear mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
             style={{ animationDelay: "260ms" }}
           >
-            <Button
-              render={<a href={`tel:${site.phone}`} />}
-              className="group relative h-12 gap-2 overflow-hidden px-7 rounded-full text-base shadow-lg shadow-primary/25 ring-1 ring-primary/20 transition-shadow hover:shadow-xl hover:shadow-primary/35"
-            >
-              <span
-                aria-hidden
-                className="absolute inset-0 -z-10 bg-gradient-to-l from-primary to-primary/85"
-              />
-              <Phone />
-              התקשרו עכשיו
-              <ArrowLeft className="transition-transform group-hover:-translate-x-0.5" />
-            </Button>
+            <Magnetic strength={0.18}>
+              <Button
+                render={<a href={`tel:${site.phone}`} />}
+                className="group relative h-12 gap-2 overflow-hidden px-7 rounded-full text-base shadow-lg shadow-primary/25 ring-1 ring-primary/20 transition-shadow hover:shadow-xl hover:shadow-primary/35"
+              >
+                <span
+                  aria-hidden
+                  className="absolute inset-0 -z-10 bg-gradient-to-l from-primary to-primary/85"
+                />
+                <Phone />
+                התקשרו עכשיו
+                <ArrowLeft className="transition-transform group-hover:-translate-x-0.5" />
+              </Button>
+            </Magnetic>
             <Button
               variant="outline"
               render={
