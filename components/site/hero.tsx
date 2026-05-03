@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, ShieldCheck } from "lucide-react";
+import { ArrowLeft, MessageCircle, Phone, ShieldCheck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { site } from "@/components/site/site-config";
@@ -9,40 +9,56 @@ export function Hero() {
       id="top"
       className="relative overflow-hidden border-b border-border/60"
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_85%_60%_at_70%_-10%,var(--accent),transparent_60%)]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,transparent_0%,var(--background)_85%)]"
-      />
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-grid" />
+        <div className="absolute left-1/2 top-[-10%] h-[520px] w-[80%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,color-mix(in_oklch,var(--primary)_38%,transparent)_0%,transparent_60%)] blur-2xl animate-glow-pulse" />
+        <div className="absolute left-1/2 top-[40%] h-[260px] w-[40%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,color-mix(in_oklch,var(--primary)_25%,transparent)_0%,transparent_60%)] blur-2xl" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-background" />
+      </div>
 
-      <div className="mx-auto max-w-6xl px-4 pt-14 pb-20 md:px-6 md:pt-20 md:pb-28">
-        <div className="mx-auto max-w-3xl text-center">
+      <div className="mx-auto max-w-6xl px-4 pt-16 pb-20 md:px-6 md:pt-24 md:pb-28">
+        <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <Badge
             variant="outline"
-            className="mb-6 h-7 gap-1.5 rounded-full border-primary/20 bg-accent/40 px-3 text-[13px] text-accent-foreground"
+            className="animate-appear h-7 gap-1.5 rounded-full border-primary/25 bg-background/70 px-3 text-[13px] text-foreground backdrop-blur"
+            style={{ animationDelay: "0ms" }}
           >
-            <ShieldCheck />
+            <ShieldCheck className="text-primary" />
             חשמלאי מוסמך • {site.area}
           </Badge>
 
-          <h1 className="text-balance text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl">
+          <h1
+            className="animate-appear mt-6 bg-gradient-to-l from-foreground via-foreground to-foreground/70 bg-clip-text text-5xl font-extrabold leading-[1.05] tracking-tight text-transparent text-balance drop-shadow-sm sm:text-6xl md:text-7xl"
+            style={{ animationDelay: "80ms" }}
+          >
             {site.brand}
-            <span className="block text-primary">{site.tagline}</span>
+            <span className="mt-2 block bg-gradient-to-l from-primary via-primary to-primary/70 bg-clip-text text-transparent">
+              {site.tagline}
+            </span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-balance text-base text-muted-foreground md:text-lg">
+          <p
+            className="animate-appear mx-auto mt-6 max-w-2xl text-balance text-base text-muted-foreground md:text-lg"
+            style={{ animationDelay: "180ms" }}
+          >
             {site.description}
           </p>
 
-          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div
+            className="animate-appear mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
+            style={{ animationDelay: "260ms" }}
+          >
             <Button
               render={<a href={`tel:${site.phone}`} />}
-              className="h-12 gap-2 px-7 rounded-full text-base"
+              className="group relative h-12 gap-2 overflow-hidden px-7 rounded-full text-base shadow-lg shadow-primary/25 ring-1 ring-primary/20 transition-shadow hover:shadow-xl hover:shadow-primary/35"
             >
-              <Phone /> התקשרו עכשיו
+              <span
+                aria-hidden
+                className="absolute inset-0 -z-10 bg-gradient-to-l from-primary to-primary/85"
+              />
+              <Phone />
+              התקשרו עכשיו
+              <ArrowLeft className="transition-transform group-hover:-translate-x-0.5" />
             </Button>
             <Button
               variant="outline"
@@ -53,21 +69,25 @@ export function Hero() {
                   rel="noopener noreferrer"
                 />
               }
-              className="h-12 gap-2 px-7 rounded-full text-base"
+              className="h-12 gap-2 px-7 rounded-full text-base bg-background/70 backdrop-blur"
             >
-              <MessageCircle /> הודעה בוואטסאפ
+              <MessageCircle />
+              הודעה בוואטסאפ
             </Button>
           </div>
-        </div>
 
-        <dl className="mx-auto mt-14 grid max-w-3xl grid-cols-3 gap-4 rounded-2xl border border-border/60 bg-card/60 p-4 text-center backdrop-blur md:gap-6 md:p-6">
-          <Stat value={`+${site.yearsExperience}`} label="שנות ניסיון" />
-          <Stat
-            value={`+${site.jobsCompleted.toLocaleString("he-IL")}`}
-            label="עבודות שבוצעו"
-          />
-          <Stat value="24/7" label="שירות חירום" />
-        </dl>
+          <dl
+            className="animate-appear-zoom mt-14 grid w-full max-w-2xl grid-cols-3 gap-4 rounded-2xl border border-border/60 bg-card/70 p-4 text-center shadow-xl shadow-primary/5 backdrop-blur md:gap-6 md:p-6"
+            style={{ animationDelay: "420ms" }}
+          >
+            <Stat value={`+${site.yearsExperience}`} label="שנות ניסיון" />
+            <Stat
+              value={`+${site.jobsCompleted.toLocaleString("he-IL")}`}
+              label="עבודות שבוצעו"
+            />
+            <Stat value="24/7" label="שירות חירום" />
+          </dl>
+        </div>
       </div>
     </section>
   );
@@ -79,7 +99,7 @@ function Stat({ value, label }: { value: string; label: string }) {
       <dt className="order-2 text-xs text-muted-foreground md:text-sm">
         {label}
       </dt>
-      <dd className="order-1 text-2xl font-bold text-foreground md:text-3xl">
+      <dd className="order-1 bg-gradient-to-l from-primary to-primary/70 bg-clip-text text-2xl font-extrabold tracking-tight text-transparent md:text-3xl">
         {value}
       </dd>
     </div>
