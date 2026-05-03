@@ -1,12 +1,6 @@
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { ContactForm } from "@/components/site/contact-form";
+import { SpotlightCard } from "@/components/site/spotlight-card";
 import { site } from "@/components/site/site-config";
 
 const items = [
@@ -38,16 +32,17 @@ const items = [
 
 function ContactItem({ item }: { item: (typeof items)[number] }) {
   const inner = (
-    <div className="flex items-center gap-4 rounded-2xl border border-border/60 bg-card p-4 transition-colors hover:bg-accent/40">
-      <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+    <div className="flex items-center gap-4 p-4">
+      <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-xl border border-primary/15 bg-gradient-to-br from-primary/15 to-primary/5 text-primary shadow-inner shadow-primary/10 transition-all duration-300 group-hover/spotlight:border-primary/40 group-hover/spotlight:from-primary group-hover/spotlight:to-primary group-hover/spotlight:text-primary-foreground group-hover/spotlight:shadow-md group-hover/spotlight:shadow-primary/30">
         <item.icon className="size-5" />
       </span>
-      <div>
+      <div className="min-w-0">
         <p className="text-xs text-muted-foreground">{item.label}</p>
-        <p className="font-semibold">{item.value}</p>
+        <p className="truncate font-semibold">{item.value}</p>
       </div>
     </div>
   );
+
   if ("href" in item && item.href) {
     return (
       <a
@@ -56,21 +51,30 @@ function ContactItem({ item }: { item: (typeof items)[number] }) {
         rel={
           "external" in item && item.external ? "noopener noreferrer" : undefined
         }
-        className="block"
+        className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-2xl"
       >
-        {inner}
+        <SpotlightCard>{inner}</SpotlightCard>
       </a>
     );
   }
-  return inner;
+
+  return <SpotlightCard>{inner}</SpotlightCard>;
 }
 
 export function Contact() {
   return (
-    <section id="contact" className="bg-primary/5 py-20 md:py-28">
+    <section
+      id="contact"
+      className="relative overflow-hidden bg-primary/5 py-20 md:py-28"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[260px] w-[80%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,color-mix(in_oklch,var(--primary)_22%,transparent)_0%,transparent_60%)] blur-2xl"
+      />
+
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+          <h2 className="bg-gradient-to-l from-foreground via-foreground to-primary/80 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-4xl">
             צרו קשר
           </h2>
           <p className="mt-3 text-muted-foreground md:text-lg">
@@ -87,17 +91,19 @@ export function Contact() {
             ))}
           </ul>
 
-          <Card className="p-2 lg:col-span-3">
-            <CardHeader className="px-4 pt-4">
-              <CardTitle className="text-xl">שלחו פנייה</CardTitle>
-              <CardDescription>
+          <SpotlightCard className="lg:col-span-3">
+            <div className="p-6 sm:p-8">
+              <h3 className="text-xl font-semibold tracking-tight">
+                שלחו פנייה
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground">
                 מלאו פרטים ונחזור אליכם תוך זמן קצר.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="px-4 pb-4">
-              <ContactForm />
-            </CardContent>
-          </Card>
+              </p>
+              <div className="mt-6">
+                <ContactForm />
+              </div>
+            </div>
+          </SpotlightCard>
         </div>
       </div>
     </section>
