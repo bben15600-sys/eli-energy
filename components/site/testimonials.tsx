@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import { Reveal } from "@/components/site/reveal";
 import { SpotlightCard } from "@/components/site/spotlight-card";
 
 type Testimonial = {
@@ -160,7 +161,7 @@ export function Testimonials() {
       />
 
       <div className="mx-auto max-w-6xl px-4 md:px-6">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal variant="up" className="mx-auto max-w-2xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
             <Star className="size-3.5 fill-current" />
             דירוג ממוצע 5 / 5
@@ -171,12 +172,14 @@ export function Testimonials() {
           <p className="mt-3 text-muted-foreground md:text-lg">
             ביקורות אמיתיות מלקוחות שכבר בחרו בנו.
           </p>
-        </div>
+        </Reveal>
 
         <ul className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:items-stretch">
           {testimonials.map((t, i) => (
             <li key={t.name} className="h-full">
-              <TestimonialCard t={t} index={i} />
+              <Reveal variant="up" delay={i * 100} className="h-full">
+                <TestimonialCard t={t} index={i} />
+              </Reveal>
             </li>
           ))}
         </ul>

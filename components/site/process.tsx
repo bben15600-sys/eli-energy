@@ -1,4 +1,5 @@
 import { ClipboardList, PhoneCall, ShieldCheck, Wrench } from "lucide-react";
+import { Reveal } from "@/components/site/reveal";
 import { SpotlightCard } from "@/components/site/spotlight-card";
 
 const steps = [
@@ -36,14 +37,14 @@ export function Process() {
       />
 
       <div className="mx-auto max-w-6xl px-4 md:px-6">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal variant="up" className="mx-auto max-w-2xl text-center">
           <h2 className="bg-gradient-to-l from-foreground via-foreground to-primary/80 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-4xl">
             איך זה עובד
           </h2>
           <p className="mt-3 text-muted-foreground md:text-lg">
             תהליך פשוט וישיר — מהפנייה הראשונה ועד האחריות שאחרי.
           </p>
-        </div>
+        </Reveal>
 
         <div className="relative mt-16 hidden lg:block">
           <div
@@ -67,7 +68,8 @@ export function Process() {
 
         <ol className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:mt-6 lg:grid-cols-4 lg:gap-8">
           {steps.map((step, index) => (
-            <li key={step.title} style={{ animationDelay: `${index * 80}ms` }}>
+            <li key={step.title}>
+              <Reveal variant="up" delay={index * 100} className="h-full">
               <SpotlightCard className="h-full">
                 <div className="flex h-full flex-col gap-4 p-6">
                   <div className="flex items-start justify-between gap-3">
@@ -88,6 +90,7 @@ export function Process() {
                   </div>
                 </div>
               </SpotlightCard>
+              </Reveal>
             </li>
           ))}
         </ol>

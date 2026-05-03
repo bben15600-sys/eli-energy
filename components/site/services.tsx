@@ -7,6 +7,7 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
+import { Reveal } from "@/components/site/reveal";
 import { SpotlightCard } from "@/components/site/spotlight-card";
 
 type Service = {
@@ -79,20 +80,25 @@ export function Services() {
       />
 
       <div className="mx-auto max-w-6xl px-4 md:px-6">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal variant="up" className="mx-auto max-w-2xl text-center">
           <h2 className="bg-gradient-to-l from-foreground via-foreground to-primary/80 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-4xl">
             השירותים שלנו
           </h2>
           <p className="mt-3 text-muted-foreground md:text-lg">
             פתרונות חשמל מקצה לקצה — לבית, לעסק ולפרויקטים גדולים.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-8 lg:gap-5 lg:auto-rows-[12rem]">
-          {services.map((service) => (
-            <SpotlightCard
+          {services.map((service, idx) => (
+            <Reveal
               key={service.title}
+              variant="up"
+              delay={idx * 70}
               className={`${sizeClass[service.size]} ${service.accent ? "lg:row-span-2" : ""}`}
+            >
+            <SpotlightCard
+              className="h-full"
             >
               <div
                 className={`flex h-full flex-col gap-3 p-6 ${
@@ -136,6 +142,7 @@ export function Services() {
                 ) : null}
               </div>
             </SpotlightCard>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -8,6 +8,7 @@ import { MobileCtaBar } from "@/components/site/mobile-cta-bar";
 import { Process } from "@/components/site/process";
 import { Services } from "@/components/site/services";
 import { Testimonials } from "@/components/site/testimonials";
+import { WhatsAppFloat } from "@/components/site/whatsapp-float";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       </main>
       <SiteFooter />
       <MobileCtaBar />
+      <WhatsAppFloat />
     </>
   );
 }

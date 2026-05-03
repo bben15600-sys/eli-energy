@@ -1,5 +1,6 @@
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { ContactForm } from "@/components/site/contact-form";
+import { Reveal } from "@/components/site/reveal";
 import { SpotlightCard } from "@/components/site/spotlight-card";
 import { site } from "@/components/site/site-config";
 
@@ -78,37 +79,41 @@ export function Contact() {
       />
 
       <div className="mx-auto max-w-6xl px-4 md:px-6">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal variant="up" className="mx-auto max-w-2xl text-center">
           <h2 className="bg-gradient-to-l from-foreground via-foreground to-primary/80 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-4xl">
             צרו קשר
           </h2>
           <p className="mt-3 text-muted-foreground md:text-lg">
             דברו איתנו עכשיו — חוזרים אליכם בהקדם האפשרי.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-5 lg:gap-10">
           <ul className="space-y-3 lg:col-span-2">
             {items.map((item, index) => (
               <li key={item.label}>
-                <ContactItem item={item} index={index} />
+                <Reveal variant="right" delay={index * 80}>
+                  <ContactItem item={item} index={index} />
+                </Reveal>
               </li>
             ))}
           </ul>
 
-          <SpotlightCard className="lg:col-span-3">
-            <div className="flex h-full flex-col gap-6 p-6 sm:p-8">
-              <div>
-                <h3 className="text-xl font-semibold tracking-tight">
-                  שלחו פנייה
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  מלאו פרטים ונחזור אליכם תוך זמן קצר.
-                </p>
+          <Reveal variant="left" delay={120} className="lg:col-span-3">
+            <SpotlightCard>
+              <div className="flex h-full flex-col gap-6 p-6 sm:p-8">
+                <div>
+                  <h3 className="text-xl font-semibold tracking-tight">
+                    שלחו פנייה
+                  </h3>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    מלאו פרטים ונחזור אליכם תוך זמן קצר.
+                  </p>
+                </div>
+                <ContactForm />
               </div>
-              <ContactForm />
-            </div>
-          </SpotlightCard>
+            </SpotlightCard>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -11,6 +11,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { BrandMark } from "@/components/site/brand-mark";
+import { Reveal } from "@/components/site/reveal";
 import { SpotlightCard } from "@/components/site/spotlight-card";
 import { site } from "@/components/site/site-config";
 
@@ -58,7 +59,7 @@ export function About() {
       />
 
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 md:px-6 lg:grid-cols-5 lg:gap-16">
-        <div className="lg:col-span-2">
+        <Reveal variant="right" className="lg:col-span-2">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
             <Sparkles className="size-3.5" />
             למה דווקא {site.brand}?
@@ -74,26 +75,26 @@ export function About() {
 
           <ul className="mt-8 space-y-3">
             {bullets.map((bullet, i) => (
-              <li
-                key={bullet.title}
-                className="group/bullet flex items-start gap-4 rounded-lg border border-border/40 bg-card/30 p-4 transition-all duration-300 hover:border-primary/40 hover:bg-card/60 hover:shadow-lg hover:shadow-primary/5"
-                style={{ animationDelay: `${i * 50}ms` }}
-              >
-                <span className="mt-1 inline-flex size-10 shrink-0 items-center justify-center rounded-xl border border-primary/20 bg-gradient-to-br from-primary/20 to-primary/10 text-primary transition-all duration-300 group-hover/bullet:border-primary/40 group-hover/bullet:from-primary/30 group-hover/bullet:to-primary/20 group-hover/bullet:shadow-md group-hover/bullet:shadow-primary/20">
-                  <bullet.icon className="size-5" />
-                </span>
-                <div className="flex-1">
-                  <p className="font-semibold leading-tight">{bullet.title}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {bullet.description}
-                  </p>
-                </div>
+              <li key={bullet.title}>
+                <Reveal variant="up" delay={i * 60}>
+                  <div className="group/bullet flex items-start gap-4 rounded-lg border border-border/40 bg-card/30 p-4 transition-all duration-300 hover:border-primary/40 hover:bg-card/60 hover:shadow-lg hover:shadow-primary/5">
+                    <span className="mt-1 inline-flex size-10 shrink-0 items-center justify-center rounded-xl border border-primary/20 bg-gradient-to-br from-primary/20 to-primary/10 text-primary transition-all duration-300 group-hover/bullet:border-primary/40 group-hover/bullet:from-primary/30 group-hover/bullet:to-primary/20 group-hover/bullet:shadow-md group-hover/bullet:shadow-primary/20">
+                      <bullet.icon className="size-5" />
+                    </span>
+                    <div className="flex-1">
+                      <p className="font-semibold leading-tight">{bullet.title}</p>
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        {bullet.description}
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
 
-        <div className="relative lg:col-span-3">
+        <Reveal variant="left" delay={120} className="relative lg:col-span-3">
           <SpotlightCard className="h-full">
             <div className="relative rounded-2xl bg-gradient-to-br from-primary/20 via-accent/40 to-background p-6">
               <div
@@ -131,7 +132,7 @@ export function About() {
               </div>
             </div>
           </SpotlightCard>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
