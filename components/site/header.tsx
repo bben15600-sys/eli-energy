@@ -1,5 +1,13 @@
-import { Phone } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { BrandMark } from "@/components/site/brand-mark";
 import { site, nav } from "@/components/site/site-config";
 
@@ -26,14 +34,54 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Button
-          render={<a href={`tel:${site.phone}`} />}
-          className="h-10 gap-2 rounded-full px-4"
-        >
-          <Phone />
-          <span className="hidden sm:inline">{site.phone}</span>
-          <span className="sm:hidden">התקשרו</span>
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button
+            render={<a href={`tel:${site.phone}`} />}
+            className="h-10 gap-2 rounded-full px-4"
+          >
+            <Phone />
+            <span className="hidden sm:inline">{site.phone}</span>
+            <span className="sm:hidden">התקשרו</span>
+          </Button>
+
+          <Sheet>
+            <SheetTrigger
+              render={
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="h-10 w-10 rounded-full md:hidden"
+                  aria-label="פתיחת תפריט"
+                />
+              }
+            >
+              <Menu />
+            </SheetTrigger>
+            <SheetContent side="right" className="w-72">
+              <SheetHeader className="border-b">
+                <SheetTitle className="flex items-center gap-2.5">
+                  <BrandMark />
+                  <span className="font-bold tracking-tight">{site.brand}</span>
+                </SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col gap-1 px-3 pb-6">
+                {nav.map((item) => (
+                  <SheetClose
+                    key={item.href}
+                    render={
+                      <a
+                        href={item.href}
+                        className="rounded-lg px-3 py-3 text-base font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-foreground"
+                      />
+                    }
+                  >
+                    {item.label}
+                  </SheetClose>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   );

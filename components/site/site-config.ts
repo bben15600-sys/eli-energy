@@ -9,6 +9,7 @@ export const site = {
   area: "מרכז הארץ",
   yearsExperience: 10,
   jobsCompleted: 1500,
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://eli-energy.vercel.app",
 } as const;
 
 export const nav = [

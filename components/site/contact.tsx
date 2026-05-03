@@ -1,5 +1,4 @@
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -7,8 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { ContactForm } from "@/components/site/contact-form";
 import { site } from "@/components/site/site-config";
 
 const items = [
@@ -37,30 +35,6 @@ const items = [
     value: site.area,
   },
 ] as const;
-
-function Field({
-  label,
-  htmlFor,
-  children,
-  className = "",
-}: {
-  label: string;
-  htmlFor: string;
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <div className={`space-y-1.5 ${className}`}>
-      <label
-        htmlFor={htmlFor}
-        className="block text-sm font-medium text-foreground"
-      >
-        {label}
-      </label>
-      {children}
-    </div>
-  );
-}
 
 function ContactItem({ item }: { item: (typeof items)[number] }) {
   const inner = (
@@ -121,65 +95,7 @@ export function Contact() {
               </CardDescription>
             </CardHeader>
             <CardContent className="px-4 pb-4">
-              <form className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <Field label="שם מלא" htmlFor="name">
-                  <Input
-                    id="name"
-                    name="name"
-                    placeholder="ישראל ישראלי"
-                    autoComplete="name"
-                    required
-                    className="h-11"
-                  />
-                </Field>
-                <Field label="טלפון" htmlFor="phone">
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    placeholder="050-0000000"
-                    inputMode="tel"
-                    autoComplete="tel"
-                    required
-                    className="h-11"
-                  />
-                </Field>
-                <Field
-                  label="אימייל (לא חובה)"
-                  htmlFor="email"
-                  className="sm:col-span-2"
-                >
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="name@example.com"
-                    autoComplete="email"
-                    className="h-11"
-                  />
-                </Field>
-                <Field
-                  label="פרטי הפנייה"
-                  htmlFor="message"
-                  className="sm:col-span-2"
-                >
-                  <Textarea
-                    id="message"
-                    name="message"
-                    placeholder="תארו בקצרה את העבודה / התקלה"
-                    rows={5}
-                    required
-                  />
-                </Field>
-                <div className="sm:col-span-2">
-                  <Button
-                    type="submit"
-                    className="h-12 w-full gap-2 rounded-xl text-base"
-                  >
-                    שלחו פנייה
-                  </Button>
-                </div>
-              </form>
+              <ContactForm />
             </CardContent>
           </Card>
         </div>
