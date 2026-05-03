@@ -128,7 +128,7 @@ export function Services() {
 
                 {service.accent ? (
                   <div className="mt-auto pt-2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
+                    <span className="animate-ring-pulse inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
                       <span className="size-1.5 animate-pulse rounded-full bg-primary" />
                       זמינים עכשיו
                     </span>

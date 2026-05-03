@@ -185,6 +185,15 @@
       transform: translateX(100%);
     }
   }
+  @keyframes ring-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 color-mix(in oklch, var(--primary) 35%, transparent);
+    }
+    50% {
+      box-shadow: 0 0 0 12px color-mix(in oklch, var(--primary) 0%, transparent);
+    }
+  }
   .animate-appear {
     animation: appear 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
@@ -199,6 +208,9 @@
   }
   .animate-shimmer {
     animation: shimmer-line 3.5s ease-in-out infinite;
+  }
+  .animate-ring-pulse {
+    animation: ring-pulse 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
   .bg-grid {
     background-image:
