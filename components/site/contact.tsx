@@ -60,9 +60,9 @@ function ContactItem({ item, index }: { item: (typeof items)[number]; index: num
   }
 
   return (
-    <SpotlightCard style={{ animationDelay: `${index * 60}ms` }}>
-      {inner}
-    </SpotlightCard>
+    <div style={{ animationDelay: `${index * 60}ms` }}>
+      <SpotlightCard>{inner}</SpotlightCard>
+    </div>
   );
 }
 
