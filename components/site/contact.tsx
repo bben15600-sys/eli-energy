@@ -30,15 +30,15 @@ const items = [
   },
 ] as const;
 
-function ContactItem({ item }: { item: (typeof items)[number] }) {
+function ContactItem({ item, index }: { item: (typeof items)[number]; index: number }) {
   const inner = (
-    <div className="flex items-center gap-4 p-4">
-      <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-xl border border-primary/15 bg-gradient-to-br from-primary/15 to-primary/5 text-primary shadow-inner shadow-primary/10 transition-all duration-300 group-hover/spotlight:border-primary/40 group-hover/spotlight:from-primary group-hover/spotlight:to-primary group-hover/spotlight:text-primary-foreground group-hover/spotlight:shadow-md group-hover/spotlight:shadow-primary/30">
+    <div className="flex items-center gap-4 p-5">
+      <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-xl border border-primary/20 bg-gradient-to-br from-primary/15 to-primary/5 text-primary shadow-inner shadow-primary/10 transition-all duration-300 group-hover/spotlight:border-primary/40 group-hover/spotlight:from-primary/25 group-hover/spotlight:to-primary/10 group-hover/spotlight:shadow-md group-hover/spotlight:shadow-primary/20">
         <item.icon className="size-5" />
       </span>
-      <div className="min-w-0">
-        <p className="text-xs text-muted-foreground">{item.label}</p>
-        <p className="truncate font-semibold">{item.value}</p>
+      <div className="min-w-0 flex-1">
+        <p className="text-xs font-medium text-muted-foreground">{item.label}</p>
+        <p className="truncate font-semibold leading-tight mt-1">{item.value}</p>
       </div>
     </div>
   );
@@ -52,24 +52,29 @@ function ContactItem({ item }: { item: (typeof items)[number] }) {
           "external" in item && item.external ? "noopener noreferrer" : undefined
         }
         className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-2xl"
+        style={{ animationDelay: `${index * 60}ms` }}
       >
         <SpotlightCard>{inner}</SpotlightCard>
       </a>
     );
   }
 
-  return <SpotlightCard>{inner}</SpotlightCard>;
+  return (
+    <SpotlightCard style={{ animationDelay: `${index * 60}ms` }}>
+      {inner}
+    </SpotlightCard>
+  );
 }
 
 export function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-primary/5 py-20 md:py-28"
+      className="relative overflow-hidden border-b border-border/60 py-20 md:py-28"
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[260px] w-[80%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,color-mix(in_oklch,var(--primary)_22%,transparent)_0%,transparent_60%)] blur-2xl"
+        className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[260px] w-[80%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,color-mix(in_oklch,var(--primary)_18%,transparent)_0%,transparent_60%)] blur-2xl"
       />
 
       <div className="mx-auto max-w-6xl px-4 md:px-6">
@@ -84,24 +89,24 @@ export function Contact() {
 
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-5 lg:gap-10">
           <ul className="space-y-3 lg:col-span-2">
-            {items.map((item) => (
+            {items.map((item, index) => (
               <li key={item.label}>
-                <ContactItem item={item} />
+                <ContactItem item={item} index={index} />
               </li>
             ))}
           </ul>
 
           <SpotlightCard className="lg:col-span-3">
-            <div className="p-6 sm:p-8">
-              <h3 className="text-xl font-semibold tracking-tight">
-                שלחו פנייה
-              </h3>
-              <p className="mt-1 text-sm text-muted-foreground">
-                מלאו פרטים ונחזור אליכם תוך זמן קצר.
-              </p>
-              <div className="mt-6">
-                <ContactForm />
+            <div className="flex h-full flex-col gap-6 p-6 sm:p-8">
+              <div>
+                <h3 className="text-xl font-semibold tracking-tight">
+                  שלחו פנייה
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  מלאו פרטים ונחזור אליכם תוך זמן קצר.
+                </p>
               </div>
+              <ContactForm />
             </div>
           </SpotlightCard>
         </div>
