@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AnimatedCounter } from "@/components/site/animated-counter";
 import { Magnetic } from "@/components/site/magnetic";
+import { Sparks } from "@/components/site/sparks";
 import { site } from "@/components/site/site-config";
 
 export function Hero() {
@@ -17,6 +18,7 @@ export function Hero() {
         <div className="absolute left-1/2 top-[40%] h-[260px] w-[40%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,color-mix(in_oklch,var(--primary)_25%,transparent)_0%,transparent_60%)] blur-2xl" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-background" />
       </div>
+      <Sparks />
 
       <div className="mx-auto max-w-6xl px-4 pt-16 pb-20 md:px-6 md:pt-24 md:pb-28">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
@@ -81,9 +83,17 @@ export function Hero() {
           </div>
 
           <dl
-            className="animate-appear-zoom mt-14 grid w-full max-w-2xl grid-cols-3 gap-4 rounded-2xl border border-border/60 bg-card/70 p-4 text-center shadow-xl shadow-primary/5 backdrop-blur md:gap-6 md:p-6"
+            className="group/stats animate-appear-zoom relative mt-14 grid w-full max-w-2xl grid-cols-3 gap-4 overflow-hidden rounded-2xl border border-border/60 bg-card/60 p-4 text-center shadow-xl shadow-primary/10 backdrop-blur-md md:gap-6 md:p-6"
             style={{ animationDelay: "420ms" }}
           >
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-l from-transparent via-primary/60 to-transparent"
+            />
+            <span
+              aria-hidden
+              className="animate-shimmer pointer-events-none absolute inset-y-0 -left-1/2 w-1/2 bg-gradient-to-r from-transparent via-primary/8 to-transparent"
+            />
             <Stat
               value={
                 <AnimatedCounter value={site.yearsExperience} prefix="+" />
