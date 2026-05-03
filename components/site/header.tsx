@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,8 +15,25 @@ import { BrandMark } from "@/components/site/brand-mark";
 import { site, nav } from "@/components/site/site-config";
 
 export function SiteHeader() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 8);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header
+      className={`sticky top-0 z-40 w-full transition-all duration-300 ${
+        scrolled
+          ? "border-b border-border/60 bg-background/85 shadow-sm shadow-primary/5 backdrop-blur"
+          : "border-b border-transparent bg-background/50 backdrop-blur"
+      }`}
+    >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 md:px-6">
         <a href="#top" className="flex items-center gap-2.5">
           <BrandMark />

@@ -1,6 +1,7 @@
 import { ArrowLeft, MessageCircle, Phone, ShieldCheck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { AnimatedCounter } from "@/components/site/animated-counter";
 import { site } from "@/components/site/site-config";
 
 export function Hero() {
@@ -80,9 +81,16 @@ export function Hero() {
             className="animate-appear-zoom mt-14 grid w-full max-w-2xl grid-cols-3 gap-4 rounded-2xl border border-border/60 bg-card/70 p-4 text-center shadow-xl shadow-primary/5 backdrop-blur md:gap-6 md:p-6"
             style={{ animationDelay: "420ms" }}
           >
-            <Stat value={`+${site.yearsExperience}`} label="שנות ניסיון" />
             <Stat
-              value={`+${site.jobsCompleted.toLocaleString("he-IL")}`}
+              value={
+                <AnimatedCounter value={site.yearsExperience} prefix="+" />
+              }
+              label="שנות ניסיון"
+            />
+            <Stat
+              value={
+                <AnimatedCounter value={site.jobsCompleted} prefix="+" />
+              }
               label="עבודות שבוצעו"
             />
             <Stat value="24/7" label="שירות חירום" />
@@ -93,7 +101,13 @@ export function Hero() {
   );
 }
 
-function Stat({ value, label }: { value: string; label: string }) {
+function Stat({
+  value,
+  label,
+}: {
+  value: React.ReactNode;
+  label: string;
+}) {
   return (
     <div className="flex flex-col items-center gap-1">
       <dt className="order-2 text-xs text-muted-foreground md:text-sm">
