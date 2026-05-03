@@ -32,13 +32,14 @@ export function Sparks() {
       {sparks.map((s, i) => (
         <span
           key={i}
-          className="animate-spark absolute rounded-full bg-primary"
+          className="animate-spark absolute rounded-full"
           style={{
             left: s.left,
             top: s.top,
             width: `${s.size}px`,
             height: `${s.size}px`,
-            boxShadow: `0 0 ${s.size * 3}px ${s.size}px color-mix(in oklch, var(--primary) 70%, transparent)`,
+            background: "var(--brand-yellow)",
+            boxShadow: `0 0 ${s.size * 3}px ${s.size}px color-mix(in oklch, var(--brand-yellow) 75%, transparent)`,
             ["--spark-delay" as string]: `${s.delay}s`,
             ["--spark-dur" as string]: `${s.duration}s`,
             ["--spark-tx" as string]: `${s.tx}px`,

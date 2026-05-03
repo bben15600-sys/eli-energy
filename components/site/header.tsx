@@ -37,8 +37,13 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 md:px-6">
         <a href="#top" className="flex items-center gap-2.5">
           <BrandMark />
-          <span className="text-base font-bold tracking-tight md:text-lg">
-            {site.brand}
+          <span className="flex flex-col leading-none">
+            <span className="text-base font-bold tracking-tight md:text-lg">
+              {site.brand}
+            </span>
+            <span className="text-[10px] font-bold tracking-[0.25em] text-accent-foreground/70 md:text-[11px]">
+              SOLUTIONS
+            </span>
           </span>
         </a>
 

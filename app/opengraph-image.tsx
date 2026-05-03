@@ -16,7 +16,7 @@ export default function OG() {
           flexDirection: "column",
           padding: "80px",
           background:
-            "linear-gradient(135deg, #eff4ff 0%, #dde9ff 60%, #bcd1ff 100%)",
+            "linear-gradient(135deg, #1A2942 0%, #0F1D35 60%, #1A2942 100%)",
           fontFamily: "system-ui, sans-serif",
           direction: "rtl",
         }}
@@ -27,7 +27,8 @@ export default function OG() {
               width: 96,
               height: 96,
               borderRadius: 24,
-              background: "#2563eb",
+              background: "rgba(245, 184, 25, 0.12)",
+              border: "2px solid rgba(245, 184, 25, 0.5)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -37,25 +38,37 @@ export default function OG() {
               width="56"
               height="56"
               viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              strokeWidth="2.2"
-              strokeLinecap="round"
+              fill="#F5B819"
+              stroke="#1A2942"
+              strokeWidth="0.5"
               strokeLinejoin="round"
             >
-              <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
+              <path d="M14 2 L7 13 H11 L9.5 22 L17 11 H13 L14 2 Z" />
             </svg>
           </div>
-          <span
-            style={{
-              fontSize: 56,
-              fontWeight: 800,
-              color: "#1a223e",
-              letterSpacing: -1,
-            }}
-          >
-            {site.brand}
-          </span>
+          <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+            <span
+              style={{
+                fontSize: 52,
+                fontWeight: 900,
+                color: "#FFFFFF",
+                letterSpacing: -1,
+                lineHeight: 1,
+              }}
+            >
+              {site.brand}
+            </span>
+            <span
+              style={{
+                fontSize: 22,
+                fontWeight: 700,
+                color: "#F5B819",
+                letterSpacing: 4,
+              }}
+            >
+              SOLUTIONS
+            </span>
+          </div>
         </div>
 
         <div
@@ -68,10 +81,10 @@ export default function OG() {
         >
           <span
             style={{
-              fontSize: 84,
+              fontSize: 76,
               fontWeight: 800,
-              color: "#1a223e",
-              lineHeight: 1.05,
+              color: "#FFFFFF",
+              lineHeight: 1.1,
               letterSpacing: -2,
             }}
           >
@@ -79,8 +92,8 @@ export default function OG() {
           </span>
           <span
             style={{
-              fontSize: 36,
-              color: "#1f3aaa",
+              fontSize: 32,
+              color: "#F5B819",
               fontWeight: 500,
             }}
           >

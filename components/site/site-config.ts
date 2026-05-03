@@ -1,5 +1,6 @@
 export const site = {
   brand: "ELI ENERGY",
+  brandFull: "ELI ENERGY SOLUTIONS",
   tagline: "שירותי חשמל מקצועיים — לבית ולעסק",
   description:
     "חשמלאי מוסמך, מהיר ואמין. עבודה איכותית עם אחריות מלאה ושירות חירום 24/7.",
