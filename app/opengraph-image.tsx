@@ -17,6 +17,11 @@ async function loadHeebo(weight: 700 | 900) {
   return fetch(fontUrl).then((r) => r.arrayBuffer());
 }
 
+// Satori doesn't support Hebrew RTL properly — manually reverse so it displays correctly
+function rtl(text: string): string {
+  return text.split(" ").reverse().map((word) => [...word].reverse().join("")).join(" ");
+}
+
 export default async function OG() {
   const [logoBuffer, heeboBold, heeboBlack] = await Promise.all([
     readFile(path.join(process.cwd(), "public", "brand", "logo-circle.png")),
@@ -77,7 +82,6 @@ export default async function OG() {
               flexDirection: "column",
               gap: 20,
               alignItems: "flex-end",
-              direction: "rtl",
             }}
           >
             <span
@@ -89,17 +93,16 @@ export default async function OG() {
                 letterSpacing: -1,
               }}
             >
-              שירותי חשמל מקצועיים
+              {rtl("שירותי חשמל מקצועיים")}
             </span>
             <span
               style={{
                 fontSize: 36,
                 fontWeight: 700,
                 color: "#F5B819",
-                letterSpacing: 0,
               }}
             >
-              חשמלאי מוסמך · שירות חירום 24/7
+              {rtl("חשמלאי מוסמך · שירות חירום")} 24/7
             </span>
           </div>
         </div>
