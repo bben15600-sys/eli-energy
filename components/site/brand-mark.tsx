@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { LogoMark } from "@/components/site/logo";
 
 export function BrandMark({
   className,
@@ -12,7 +11,7 @@ export function BrandMark({
     <span
       aria-hidden
       className={cn(
-        "group/brand relative inline-flex size-9 shrink-0 items-center justify-center rounded-xl border border-primary/40 bg-gradient-to-br from-primary to-primary/85 text-primary-foreground shadow-sm shadow-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-accent/40",
+        "group/brand relative inline-flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white shadow-sm shadow-primary/20 ring-1 ring-border transition-all duration-300 hover:shadow-lg hover:shadow-accent/50 hover:ring-accent/40",
         className,
       )}
     >
@@ -20,9 +19,13 @@ export function BrandMark({
         aria-hidden
         className="absolute inset-0 -z-10 rounded-[inherit] bg-accent/40 opacity-0 blur-md transition-opacity duration-300 group-hover/brand:opacity-100"
       />
-      <LogoMark
+      <img
+        src="/brand/logo-circle.png"
+        alt=""
+        width={624}
+        height={624}
         className={cn(
-          "size-6 transition-transform duration-300 group-hover/brand:scale-110",
+          "size-full object-cover transition-transform duration-300 group-hover/brand:scale-110",
           iconClassName,
         )}
       />

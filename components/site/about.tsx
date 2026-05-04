@@ -105,13 +105,13 @@ export function About() {
                 className="absolute left-1/2 top-1/2 size-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,color-mix(in_oklch,var(--brand-yellow)_30%,transparent)_0%,transparent_70%)] blur-2xl"
               />
               <div className="relative flex h-full flex-col items-center justify-between gap-6 py-4">
-                <picture className="block w-full">
+                <picture className="block">
                   <img
-                    src="/brand/logo.png"
+                    src="/brand/logo-circle.png"
                     alt={`לוגו ${site.brandFull}`}
-                    width={1673}
+                    width={624}
                     height={624}
-                    className="mx-auto h-auto w-full max-w-md drop-shadow-xl"
+                    className="mx-auto size-56 md:size-64 drop-shadow-2xl"
                     loading="lazy"
                   />
                 </picture>
