@@ -10,7 +10,6 @@ import {
   Wrench,
   type LucideIcon,
 } from "lucide-react";
-import { BrandMark } from "@/components/site/brand-mark";
 import { Reveal } from "@/components/site/reveal";
 import { SpotlightCard } from "@/components/site/spotlight-card";
 import { site } from "@/components/site/site-config";
@@ -96,29 +95,36 @@ export function About() {
 
         <Reveal variant="left" delay={120} className="relative lg:col-span-3">
           <SpotlightCard className="h-full">
-            <div className="relative rounded-2xl bg-gradient-to-br from-primary/20 via-accent/40 to-background p-6">
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-accent/40 to-background p-6">
               <div
                 aria-hidden
                 className="absolute inset-0 bg-grid opacity-50 rounded-2xl"
               />
               <div
                 aria-hidden
-                className="absolute left-1/2 top-1/2 size-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,color-mix(in_oklch,var(--primary)_22%,transparent)_0%,transparent_70%)] blur-2xl"
+                className="absolute left-1/2 top-1/2 size-[60%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,color-mix(in_oklch,var(--brand-yellow)_30%,transparent)_0%,transparent_70%)] blur-2xl"
               />
-              <div className="relative flex h-full flex-col items-center justify-between gap-8 py-8">
-                <div className="flex flex-col items-center gap-4 text-center">
-                  <BrandMark
-                    className="size-20 rounded-2xl shadow-2xl shadow-primary/30"
-                    iconClassName="size-10"
+              <div className="relative flex h-full flex-col items-center justify-between gap-6 py-4">
+                <picture className="block w-full">
+                  <img
+                    src="/brand/logo.png"
+                    alt={`לוגו ${site.brandFull}`}
+                    width={1673}
+                    height={624}
+                    className="mx-auto h-auto w-full max-w-md drop-shadow-xl"
+                    loading="lazy"
                   />
-                  <div>
-                    <p className="text-2xl font-bold tracking-tight">
-                      {site.brand}
-                    </p>
-                    <p className="mt-2 max-w-xs text-sm text-muted-foreground">
-                      תמונת הצוות / רכב השירות / עבודה אופיינית — placeholder
-                    </p>
-                  </div>
+                </picture>
+                <div className="text-center">
+                  <p className="text-xl font-bold tracking-tight md:text-2xl">
+                    {site.brand}
+                    <span className="ms-2 text-sm font-extrabold tracking-[0.25em] text-accent-foreground/70">
+                      SOLUTIONS
+                    </span>
+                  </p>
+                  <p className="mt-2 max-w-xs text-sm text-muted-foreground">
+                    שותפים שלכם לכל פתרון חשמל — מקצועיות אמיתית, אחריות מלאה.
+                  </p>
                 </div>
 
                 <div className="w-full grid grid-cols-3 gap-3">
