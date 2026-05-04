@@ -40,7 +40,7 @@ export default async function OG() {
           display: "flex",
           padding: "80px",
           background:
-            "linear-gradient(135deg, #1A2942 0%, #0F1D35 60%, #1A2942 100%)",
+            "linear-gradient(135deg, #1A2942 0%, #0B1628 50%, #1A2942 100%)",
           fontFamily: "Heebo",
         }}
       >
