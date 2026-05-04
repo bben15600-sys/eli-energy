@@ -9,18 +9,14 @@ type Spark = {
 };
 
 const sparks: Spark[] = [
-  { left: "8%", top: "78%", size: 3, delay: 0, duration: 7.5, tx: 22, ty: -180 },
-  { left: "16%", top: "62%", size: 2, delay: 1.4, duration: 8.5, tx: -18, ty: -160 },
-  { left: "24%", top: "85%", size: 4, delay: 2.6, duration: 9, tx: 14, ty: -200 },
-  { left: "34%", top: "70%", size: 2, delay: 0.8, duration: 8, tx: -10, ty: -170 },
-  { left: "44%", top: "88%", size: 3, delay: 3.2, duration: 7.8, tx: 24, ty: -190 },
-  { left: "55%", top: "55%", size: 2, delay: 1.9, duration: 9.5, tx: -22, ty: -150 },
-  { left: "65%", top: "82%", size: 3, delay: 0.4, duration: 8.2, tx: 18, ty: -210 },
-  { left: "74%", top: "66%", size: 2, delay: 2.2, duration: 7.6, tx: -16, ty: -175 },
-  { left: "82%", top: "90%", size: 4, delay: 4, duration: 8.8, tx: 12, ty: -195 },
-  { left: "90%", top: "72%", size: 2, delay: 1.1, duration: 7.2, tx: -20, ty: -165 },
-  { left: "30%", top: "92%", size: 2, delay: 3.6, duration: 9.2, tx: 8, ty: -180 },
-  { left: "70%", top: "50%", size: 3, delay: 0.2, duration: 8.4, tx: -14, ty: -155 },
+  { left: "12%", top: "80%", size: 3, delay: 0, duration: 11, tx: 22, ty: -180 },
+  { left: "26%", top: "68%", size: 2, delay: 2.4, duration: 12, tx: -18, ty: -160 },
+  { left: "38%", top: "88%", size: 3, delay: 5.1, duration: 10.5, tx: 14, ty: -200 },
+  { left: "52%", top: "60%", size: 2, delay: 1.2, duration: 11.8, tx: -22, ty: -150 },
+  { left: "64%", top: "84%", size: 3, delay: 3.8, duration: 11.2, tx: 18, ty: -210 },
+  { left: "78%", top: "70%", size: 2, delay: 6.5, duration: 12.4, tx: -16, ty: -175 },
+  { left: "88%", top: "86%", size: 3, delay: 0.8, duration: 11.5, tx: 12, ty: -195 },
+  { left: "20%", top: "55%", size: 2, delay: 4.6, duration: 12.8, tx: 8, ty: -155 },
 ];
 
 export function Sparks() {

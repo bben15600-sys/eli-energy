@@ -52,7 +52,7 @@ export function SiteHeader() {
             <a
               key={item.href}
               href={item.href}
-              className="transition-colors hover:text-foreground"
+              className="rounded-md px-1 py-0.5 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
             >
               {item.label}
             </a>
