@@ -1,13 +1,13 @@
 "use client";
 
 import {
-  BadgeCheck,
-  CheckCircle2,
-  Clock,
-  HandCoins,
+  Award,
+  Building2,
+  ClipboardCheck,
+  FlaskConical,
+  Gauge,
   Sparkles,
   UserCheck,
-  Wrench,
   type LucideIcon,
 } from "lucide-react";
 import { Reveal } from "@/components/site/reveal";
@@ -18,34 +18,40 @@ type Bullet = { icon: LucideIcon; title: string; description: string };
 
 const bullets: Bullet[] = [
   {
-    icon: BadgeCheck,
-    title: "חשמלאי מוסמך",
-    description: "בעל רישיון חשמלאי מוסמך מטעם משרד התשתיות.",
+    icon: FlaskConical,
+    title: "מומחה פארמה וחדרים נקיים",
+    description:
+      "ידע נרחב בתשתיות חשמל למפעלי פארמה ומתקני חדרים נקיים, עבודה לפי תקנים מחמירים.",
   },
   {
-    icon: CheckCircle2,
-    title: "אחריות מלאה",
-    description: "אחריות על כל עבודה ושירות שאנחנו מספקים.",
+    icon: Award,
+    title: "15 שנות ניסיון בתעשייה",
+    description:
+      "ניסיון מוכח בעולמות החשמל, התפעול והאחזקה במפעלי תעשייה מובילים בארץ.",
   },
   {
-    icon: HandCoins,
-    title: "מחירים שקופים",
-    description: "הצעת מחיר מסודרת מראש — בלי הפתעות בחשבון.",
+    icon: ClipboardCheck,
+    title: "עמידה בכל התקנים",
+    description:
+      "מצוי בכל התקנים המחמירים — כיבוי אש, מתח גבוה, חוק החשמל ודרישות הרשויות.",
   },
   {
-    icon: Clock,
-    title: "הגעה מהירה",
-    description: "זמינות גבוהה לכל פנייה ושירות חירום 24/7.",
+    icon: Building2,
+    title: "ניהול פרוייקטים מורכבים",
+    description:
+      "תכנון וביצוע מקצה לקצה — מהאפיון הראשוני ועד המסירה והאישורים.",
   },
   {
-    icon: Wrench,
-    title: "ציוד איכותי",
-    description: "עבודה רק עם רכיבים תקניים מהמותגים המובילים.",
+    icon: Gauge,
+    title: "אחזקה ומינימום השבתה",
+    description:
+      "תחזוקת קווי ייצור, תשתיות ומכונות — תכנון לוחות זמנים שמכבד את הייצור.",
   },
   {
     icon: UserCheck,
-    title: "שירות אישי",
-    description: "יחס אישי, ליווי צמוד והקשבה לכל לקוח ולקוח.",
+    title: "ליווי מול הרשויות",
+    description:
+      "הבנה ויכולת עבודה מול חשמל, כיבוי אש ושאר הגופים הרלוונטיים — מתחילת הפרוייקט עד אישור הסיום.",
   },
 ];
 
@@ -61,15 +67,15 @@ export function About() {
         <Reveal variant="right" className="lg:col-span-2">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
             <Sparkles className="size-3.5" />
-            למה דווקא {site.brand}?
+            {site.ownerName} — מייסד {site.brand}
           </span>
           <h2 className="mt-4 bg-gradient-to-l from-foreground via-foreground to-primary/80 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-4xl">
-            מקצועיות, אמינות ושירות שלא מתפשרים
+            חשמל תעשייתי ברמה הגבוהה ביותר
           </h2>
           <p className="mt-4 text-muted-foreground md:text-lg">
-            עם מעל {site.yearsExperience} שנות ניסיון ויותר מ־
-            {site.jobsCompleted.toLocaleString("he-IL")} עבודות מוצלחות, אנחנו
-            דואגים שהחשמל בבית ובעסק שלכם יעבוד בצורה בטוחה, חכמה ויעילה.
+            {site.ownerName}, בעל ניסיון של {site.yearsExperience} שנים בעולמות
+            החשמל, התפעול והאחזקה בתעשייה. ידע נרחב בעולמות הפארמה והחדרים
+            הנקיים, ניהול פרוייקטים מורכבים ועמידה בכל התקנים המחמירים.
           </p>
 
           <ul className="mt-8 space-y-3">
@@ -123,7 +129,7 @@ export function About() {
                     </span>
                   </p>
                   <p className="mt-2 max-w-xs text-sm text-muted-foreground">
-                    שותפים שלכם לכל פתרון חשמל — מקצועיות אמיתית, אחריות מלאה.
+                    {site.ownerName} · חשמל תעשייתי, פארמה וחדרים נקיים.
                   </p>
                 </div>
 
@@ -131,9 +137,9 @@ export function About() {
                   <Pill value={`+${site.yearsExperience}`} label="שנות ניסיון" />
                   <Pill
                     value={`+${site.jobsCompleted.toLocaleString("he-IL")}`}
-                    label="עבודות"
+                    label="פרוייקטים"
                   />
-                  <Pill value="24/7" label="חירום" />
+                  <Pill value="100%" label="עמידה בתקנים" />
                 </div>
               </div>
             </div>

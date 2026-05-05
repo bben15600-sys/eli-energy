@@ -1,10 +1,10 @@
 import {
-  Cpu,
-  Home,
-  Lightbulb,
-  ShieldAlert,
+  ClipboardCheck,
+  Cog,
+  FlaskConical,
+  Gauge,
+  Layers,
   Wrench,
-  Zap,
   type LucideIcon,
 } from "lucide-react";
 import { Reveal } from "@/components/site/reveal";
@@ -20,44 +20,46 @@ type Service = {
 
 const services: Service[] = [
   {
-    icon: ShieldAlert,
-    title: "שירות חירום 24/7",
+    icon: FlaskConical,
+    title: "פארמה וחדרים נקיים",
     description:
-      "זמינות מלאה כל היום, כל הלילה. הגעה מהירה לכל קריאה דחופה — תקלות חשמל, קצרים, וכל מצב חירום.",
+      "תשתיות חשמל ואחזקה למפעלי פארמה ומתקני חדרים נקיים — עבודה לפי תקנים מחמירים, ידע נרחב מול כל הרשויות.",
     size: "lg",
     accent: true,
   },
   {
-    icon: Zap,
-    title: "התקנות חשמל",
+    icon: Layers,
+    title: "תכנון וביצוע פרוייקטים",
     description:
-      "התקנה ושדרוג של מערכות חשמל לבית ולעסק — לוחות, שקעים, נקודות ומעגלים.",
+      "החלפת לוחות, שיפור תשתיות קיימות וביצוע פרוייקטי חשמל מורכבים מקצה לקצה.",
     size: "md",
   },
   {
     icon: Wrench,
-    title: "תיקוני חשמל",
-    description: "אבחון ותיקון תקלות, קצרים, רגישות ופחתים.",
-    size: "sm",
-  },
-  {
-    icon: Cpu,
-    title: "סמארט הום",
-    description: "בית חכם — תאורה, תריסים ומיזוג בשליטה מהטלפון.",
-    size: "sm",
-  },
-  {
-    icon: Lightbulb,
-    title: "תאורה ועיצוב",
+    title: "תיקון קצרים והחלפת לוחות",
     description:
-      "תכנון ויישום פתרונות תאורה — תאורה דקורטיבית, LED ופתרונות חיסכון.",
+      "אבחון מהיר, החלפת לוחות חשמל ובדיקות מקיפות של ממסרי פחת והארקה.",
+    size: "sm",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "בדיקות שנתיות וכיבוי אש",
+    description:
+      "אישורים בהתאם לדרישות כיבוי אש, כולל מתח גבוה — עמידה מלאה בכל התקנים.",
+    size: "sm",
+  },
+  {
+    icon: Cog,
+    title: "אחזקת קווי ייצור",
+    description:
+      "שירותי אחזקה ושיפור לקווי ייצור קיימים — מינימום השבתה, מקסימום זמינות.",
     size: "md",
   },
   {
-    icon: Home,
-    title: "שיפוצים ובנייה",
+    icon: Gauge,
+    title: "תעשייה ובנייני משרדים",
     description:
-      "ליווי חשמל מלא בשיפוצים ובנייה — מתכנון מוקדם ועד מסירה.",
+      "שירותי חשמל ואחזקה כוללים למפעלי תעשייה, בנייני משרדים ומתקנים תפעוליים.",
     size: "md",
   },
 ];
@@ -136,7 +138,7 @@ export function Services() {
                   <div className="mt-auto pt-2">
                     <span className="animate-ring-pulse inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
                       <span className="size-1.5 animate-pulse rounded-full bg-primary" />
-                      זמינים עכשיו
+                      התמחות בלעדית
                     </span>
                   </div>
                 ) : null}

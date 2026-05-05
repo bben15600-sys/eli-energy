@@ -1,15 +1,16 @@
 export const site = {
   brand: "ELI ENERGY",
   brandFull: "ELI ENERGY SOLUTIONS",
-  tagline: "שירותי חשמל מקצועיים — לבית ולעסק",
+  ownerName: "אלי דדון",
+  tagline: "תכנון וביצוע עבודות חשמל בתעשייה",
   description:
-    "חשמלאי מוסמך, מהיר ואמין. עבודה איכותית עם אחריות מלאה ושירות חירום 24/7.",
-  phone: "050-0000000",
-  whatsapp: "9725000000000",
+    "ניסיון של 15 שנה בחשמל תעשייתי, פארמה וחדרים נקיים. תכנון, ביצוע ואחזקה בעמידה מלאה בכל התקנים — כולל מתח גבוה ודרישות כיבוי אש.",
+  phone: "054-472-8292",
+  whatsapp: "972544728292",
   email: "info@eli-energy.example",
-  area: "מרכז הארץ",
-  yearsExperience: 10,
-  jobsCompleted: 1500,
+  area: "תעשייה — כל הארץ",
+  yearsExperience: 15,
+  jobsCompleted: 250,
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://eli-energy.vercel.app",
 } as const;
 

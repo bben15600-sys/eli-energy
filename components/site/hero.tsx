@@ -28,7 +28,7 @@ export function Hero() {
             style={{ animationDelay: "0ms" }}
           >
             <ShieldCheck className="text-primary" />
-            חשמלאי מוסמך • {site.area}
+            חשמלאי תעשייתי מוסמך • פארמה וחדרים נקיים
           </Badge>
 
           <h1
@@ -104,9 +104,9 @@ export function Hero() {
               value={
                 <AnimatedCounter value={site.jobsCompleted} prefix="+" />
               }
-              label="עבודות שבוצעו"
+              label="פרוייקטים"
             />
-            <Stat value="24/7" label="שירות חירום" />
+            <Stat value="100%" label="עמידה בתקנים" />
           </dl>
         </div>
       </div>
