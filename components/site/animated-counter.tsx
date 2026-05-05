@@ -16,33 +16,24 @@ export function AnimatedCounter({
   className?: string;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [display, setDisplay] = useState(0);
-  const [popped, setPopped] = useState(false);
+  const [display, setDisplay] = useState(value);
   const startedRef = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    setDisplay(0);
     const observer = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
           if (e.isIntersecting && !startedRef.current) {
             startedRef.current = true;
-            const start = performance.now() + 80;
+            const start = performance.now();
             const tick = (now: number) => {
-              if (now < start) {
-                requestAnimationFrame(tick);
-                return;
-              }
               const t = Math.min(1, (now - start) / duration);
               const eased = 1 - Math.pow(1 - t, 5);
               setDisplay(Math.round(eased * value));
-              if (t < 1) {
-                requestAnimationFrame(tick);
-              } else {
-                setPopped(true);
-                window.setTimeout(() => setPopped(false), 380);
-              }
+              if (t < 1) requestAnimationFrame(tick);
             };
             requestAnimationFrame(tick);
             observer.disconnect();
@@ -56,12 +47,7 @@ export function AnimatedCounter({
   }, [value, duration]);
 
   return (
-    <span
-      ref={ref}
-      className={`inline-block transition-transform duration-300 ease-out ${
-        popped ? "scale-[1.08]" : "scale-100"
-      } ${className ?? ""}`}
-    >
+    <span ref={ref} className={className}>
       {prefix}
       {display.toLocaleString("he-IL")}
       {suffix}

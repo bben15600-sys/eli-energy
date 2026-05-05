@@ -7,7 +7,7 @@ export const site = {
     "ניסיון של 20 שנה בחשמל תעשייתי, פארמה וחדרים נקיים. תכנון, ביצוע ואחזקה בעמידה מלאה בכל התקנים — כולל מתח גבוה ודרישות כיבוי אש.",
   phone: "054-472-8292",
   whatsapp: "972544728292",
-  email: "info@eli-energy.example",
+  email: "eli.energ@outlook.com",
   area: "תעשייה — כל הארץ",
   yearsExperience: 20,
   jobsCompleted: 250,

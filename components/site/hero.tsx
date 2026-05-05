@@ -126,7 +126,7 @@ function Stat({
       <dt className="order-2 text-xs text-muted-foreground md:text-sm">
         {label}
       </dt>
-      <dd className="order-1 bg-gradient-to-l from-primary to-primary/70 bg-clip-text text-2xl font-extrabold tracking-tight text-transparent md:text-3xl">
+      <dd className="order-1 text-2xl font-extrabold tracking-tight text-primary md:text-3xl">
         {value}
       </dd>
     </div>
