@@ -84,7 +84,7 @@ export function Contact() {
             צרו קשר
           </h2>
           <p className="mt-3 text-muted-foreground md:text-lg">
-            דברו איתנו עכשיו — חוזרים אליכם בהקדם האפשרי.
+            התקשרו לחירום או השאירו פרטים — מענה לפניות תוך 24 שעות.
           </p>
         </Reveal>
 

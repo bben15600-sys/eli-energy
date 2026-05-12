@@ -32,9 +32,17 @@ function Field({
       </label>
       {children}
       {error ? (
-        <p className="text-xs text-destructive">{error}</p>
+        <p
+          id={`${htmlFor}-error`}
+          role="alert"
+          className="text-xs font-medium text-destructive"
+        >
+          {error}
+        </p>
       ) : hint ? (
-        <p className="text-xs text-muted-foreground">{hint}</p>
+        <p id={`${htmlFor}-hint`} className="text-xs text-muted-foreground">
+          {hint}
+        </p>
       ) : null}
     </div>
   );

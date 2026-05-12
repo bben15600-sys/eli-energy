@@ -32,11 +32,13 @@ export function Hero() {
           </Badge>
 
           <h1
-            className="animate-appear mt-6 bg-gradient-to-l from-foreground via-foreground to-foreground/70 bg-clip-text text-5xl font-extrabold leading-[1.05] tracking-tight text-transparent text-balance drop-shadow-sm sm:text-6xl md:text-7xl"
+            className="animate-appear mt-6 text-5xl font-bold leading-[1.05] tracking-tight text-balance drop-shadow-sm sm:text-6xl md:text-7xl"
             style={{ animationDelay: "80ms" }}
           >
-            {site.brand}
-            <span className="mt-2 block bg-gradient-to-l from-primary via-primary to-primary/70 bg-clip-text text-transparent">
+            <span className="font-display block bg-gradient-to-l from-foreground via-foreground to-foreground/70 bg-clip-text tracking-[0.04em] text-transparent">
+              {site.brand}
+            </span>
+            <span className="mt-3 block bg-gradient-to-l from-primary via-primary to-primary/70 bg-clip-text text-transparent">
               {site.tagline}
             </span>
           </h1>

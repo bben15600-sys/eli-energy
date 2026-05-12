@@ -22,7 +22,12 @@ export function JsonLd() {
     },
     areaServed: [
       { "@type": "Country", name: "Israel" },
-      { "@type": "AdministrativeArea", name: site.area },
+      { "@type": "AdministrativeArea", name: "מחוז המרכז" },
+      { "@type": "AdministrativeArea", name: "מחוז תל אביב" },
+      { "@type": "AdministrativeArea", name: "מחוז ירושלים" },
+      { "@type": "AdministrativeArea", name: "מחוז הצפון" },
+      { "@type": "AdministrativeArea", name: "מחוז הדרום" },
+      { "@type": "AdministrativeArea", name: "מחוז חיפה" },
     ],
     address: { "@type": "PostalAddress", addressCountry: "IL" },
     image: [`${site.url}/og.png`, `${site.url}/brand/logo.png`],

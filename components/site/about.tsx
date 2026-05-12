@@ -21,7 +21,7 @@ const bullets: Bullet[] = [
     icon: FlaskConical,
     title: "מומחה פארמה וחדרים נקיים",
     description:
-      "ידע נרחב בתשתיות חשמל למפעלי פארמה ומתקני חדרים נקיים, עבודה לפי תקנים מחמירים.",
+      "ניסיון מוכח בתשתיות פארמציות בדרגת ניקיון גבוהה — GMP-ready, ISO 14644, עמידה בדרישות חשמל וכיבוי אש של מתקנים רגולטוריים.",
   },
   {
     icon: Award,
@@ -145,9 +145,9 @@ export function About() {
                   />
                 </picture>
                 <div className="text-center">
-                  <p className="text-xl font-bold tracking-tight md:text-2xl">
+                  <p className="font-display text-xl font-bold tracking-[0.08em] md:text-2xl">
                     {site.brand}
-                    <span className="ms-2 text-sm font-extrabold tracking-[0.25em] text-accent-foreground/70">
+                    <span className="ms-2 text-sm font-semibold tracking-[0.35em] text-primary">
                       SOLUTIONS
                     </span>
                   </p>

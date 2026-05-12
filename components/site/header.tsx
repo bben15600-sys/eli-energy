@@ -38,10 +38,10 @@ export function SiteHeader() {
         <a href="#top" className="flex items-center gap-2.5 justify-self-start">
           <BrandMark />
           <span className="flex flex-col leading-none">
-            <span className="text-base font-bold tracking-tight md:text-lg">
+            <span className="font-display text-base font-bold tracking-[0.08em] md:text-lg">
               {site.brand}
             </span>
-            <span className="text-[10px] font-bold tracking-[0.25em] text-accent-foreground/70 md:text-[11px]">
+            <span className="font-display text-[10px] font-semibold tracking-[0.35em] text-primary md:text-[11px]">
               SOLUTIONS
             </span>
           </span>

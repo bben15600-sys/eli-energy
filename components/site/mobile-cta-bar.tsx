@@ -27,18 +27,20 @@ export function MobileCtaBar() {
       <div className="grid grid-cols-2 gap-2 p-2">
         <a
           href={`tel:${site.phone}`}
-          className="flex h-12 items-center justify-center gap-2 rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/25 transition-shadow active:translate-y-px"
+          aria-label={`התקשרו ל-${site.brand} בטלפון ${site.phone}`}
+          className="flex h-12 items-center justify-center gap-2 rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/25 transition-shadow active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         >
-          <Phone className="size-5" />
+          <Phone className="size-5" aria-hidden />
           <span className="font-semibold">התקשרו</span>
         </a>
         <a
           href={`https://wa.me/${site.whatsapp}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-12 items-center justify-center gap-2 rounded-xl border border-border bg-background text-foreground shadow-sm transition-colors hover:bg-accent active:translate-y-px"
+          aria-label={`שלחו הודעת WhatsApp ל-${site.brand}`}
+          className="flex h-12 items-center justify-center gap-2 rounded-xl border border-border bg-background text-foreground shadow-sm transition-colors hover:bg-accent active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         >
-          <MessageCircle className="size-5" />
+          <MessageCircle className="size-5" aria-hidden />
           <span className="font-semibold">וואטסאפ</span>
         </a>
       </div>
