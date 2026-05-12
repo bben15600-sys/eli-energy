@@ -22,3 +22,6 @@ export const nav = [
   { href: "#process", label: "תהליך העבודה" },
   { href: "#contact", label: "צור קשר" },
 ] as const;
+
+// Will be created public/projects/. Add entries in components/site/gallery.tsx
+// to display them. The Gallery section auto-hides when empty.
