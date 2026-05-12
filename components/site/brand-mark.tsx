@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { site } from "@/components/site/site-config";
 
 export function BrandMark({
   className,
@@ -21,7 +22,7 @@ export function BrandMark({
       />
       <img
         src="/brand/logo-circle.png"
-        alt=""
+        alt={`לוגו ${site.brandFull}`}
         width={624}
         height={624}
         className={cn(

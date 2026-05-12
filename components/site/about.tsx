@@ -65,11 +65,34 @@ export function About() {
 
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-4 md:px-6 lg:grid-cols-5 lg:gap-16">
         <Reveal variant="right" className="lg:col-span-2">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
-            <Sparkles className="size-3.5" />
-            {site.ownerName} — מייסד {site.brand}
-          </span>
-          <h2 className="mt-4 bg-gradient-to-l from-foreground via-foreground to-primary/80 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-4xl">
+          <div className="flex items-center gap-4">
+            <div
+              aria-hidden
+              className="relative inline-flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-primary/30 bg-gradient-to-br from-primary/20 to-primary/5 text-primary shadow-md shadow-primary/20"
+              title={`${site.ownerName} — תמונה`}
+            >
+              <span className="text-xl font-bold">
+                {site.ownerName.charAt(0)}
+              </span>
+            </div>
+            <div className="flex flex-col gap-1">
+              <span className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
+                <Sparkles className="size-3.5" />
+                {site.ownerName} — מייסד {site.brand}
+              </span>
+              {site.licenseNumber && site.licenseNumber !== "—" ? (
+                <span className="text-[11px] text-muted-foreground">
+                  חשמלאי מוסמך · רישיון {site.licenseNumber}
+                </span>
+              ) : (
+                <span className="text-[11px] text-muted-foreground">
+                  חשמלאי מוסמך מטעם משרד התשתיות
+                </span>
+              )}
+            </div>
+          </div>
+
+          <h2 className="mt-6 bg-gradient-to-l from-foreground via-foreground to-primary/80 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-4xl">
             חשמל תעשייתי ברמה הגבוהה ביותר
           </h2>
           <p className="mt-4 text-muted-foreground md:text-lg">

@@ -5,6 +5,7 @@ import {
   Wrench,
   type LucideIcon,
 } from "lucide-react";
+import { site } from "@/components/site/site-config";
 
 type Cert = { icon: LucideIcon; title: string; subtitle: string };
 
@@ -12,7 +13,10 @@ const certs: Cert[] = [
   {
     icon: BadgeCheck,
     title: "חשמלאי מוסמך",
-    subtitle: "רישיון משרד התשתיות",
+    subtitle:
+      site.licenseNumber && site.licenseNumber !== "—"
+        ? `רישיון ${site.licenseNumber}`
+        : "רישיון משרד התשתיות",
   },
   {
     icon: ShieldCheck,

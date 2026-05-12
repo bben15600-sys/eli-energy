@@ -34,8 +34,8 @@ export function SiteHeader() {
           : "border-b border-transparent bg-background/50 backdrop-blur"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 md:px-6">
-        <a href="#top" className="flex items-center gap-2.5">
+      <div className="mx-auto grid h-16 max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 md:px-6">
+        <a href="#top" className="flex items-center gap-2.5 justify-self-start">
           <BrandMark />
           <span className="flex flex-col leading-none">
             <span className="text-base font-bold tracking-tight md:text-lg">
@@ -47,7 +47,7 @@ export function SiteHeader() {
           </span>
         </a>
 
-        <nav className="hidden items-center gap-7 text-sm font-medium text-muted-foreground md:flex">
+        <nav className="hidden items-center justify-center gap-7 text-sm font-medium text-muted-foreground md:flex">
           {nav.map((item) => (
             <a
               key={item.href}
@@ -59,7 +59,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 justify-self-end">
           <Button
             render={<a href={`tel:${site.phone}`} />}
             className="h-10 gap-2 rounded-full px-4"

@@ -2,6 +2,7 @@ export const site = {
   brand: "ELI ENERGY",
   brandFull: "ELI ENERGY SOLUTIONS",
   ownerName: "אלי דדון",
+  licenseNumber: "—",
   tagline: "תכנון וביצוע עבודות חשמל בתעשייה",
   description:
     "ניסיון של 20 שנה בחשמל תעשייתי, פארמה וחדרים נקיים. תכנון, ביצוע ואחזקה בעמידה מלאה בכל התקנים — כולל מתח גבוה ודרישות כיבוי אש.",
