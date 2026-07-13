@@ -19,69 +19,74 @@ const services: Service[] = [
     icon: FlaskConical,
     title: "פארמה וחדרים נקיים",
     description:
-      "תשתיות חשמל למפעלי פארמה ומתקני חדרים נקיים. ISO 14644, GMP-ready. עמידה בתקנים מחמירים ובדרישות כיבוי אש.",
+      "תשתיות חשמל למפעלי פארמה. ISO 14644, GMP-ready. עמידה בתקנים מחמירים.",
   },
   {
     icon: Layers,
-    title: "תכנון וביצוע פרוייקטים",
+    title: "תכנון וביצוע",
     description:
-      "פרוייקטים מורכבים מקצה לקצה. החלפת לוחות, שיפור תשתיות קיימות, עבודה בתאום מלא עם דרישות הלקוח.",
+      "פרוייקטים מורכבים. החלפת לוחות, שיפור תשתיות. עבודה בתאום מלא.",
   },
   {
     icon: Wrench,
-    title: "תיקון קצרים והחלפת לוחות",
+    title: "תיקון וחלפיות",
     description:
-      "אבחון מהיר, החלפת לוחות חשמל, בדיקות מקיפות של ממסרי פחת והארקה. שירות חירום זמין 24/7.",
+      "אבחון מהיר, החלפות, בדיקות מקיפות. שירות חירום 24/7.",
   },
   {
     icon: ClipboardCheck,
-    title: "בדיקות שנתיות וכיבוי אש",
+    title: "בדיקות וכיבוי אש",
     description:
-      "אישורים בהתאם לדרישות כיבוי אש, כולל מתח גבוה. עמידה מלאה בכל התקנים הרלוונטיים.",
+      "אישורים בדרישות כיבוי אש. עמידה בכל התקנים הרלוונטיים.",
   },
   {
     icon: Cog,
-    title: "אחזקת קווי ייצור",
+    title: "אחזקה ייצורית",
     description:
-      "שירותי אחזקה ושיפור לקווי ייצור. מינימום השבתה, מקסימום זמינות ויעילות ייצור.",
+      "שיפור קווי ייצור. מינימום השבתה, מקסימום זמינות.",
   },
   {
     icon: Gauge,
-    title: "תעשייה ובנייני משרדים",
+    title: "תעשייה ומשרדים",
     description:
-      "שירותי חשמל ואחזקה כוללים. מפעלי תעשייה, בנייני משרדים, מתקנים תפעוליים.",
+      "שירותי חשמל כוללים. מפעלים, משרדים, מתקנים.",
   },
 ];
 
 export function Services() {
   return (
-    <section id="services" className="border-b border-border bg-background py-20 md:py-28">
+    <section id="services" className="bg-background border-b border-border">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            השירותים שלנו
+        {/* Header Block */}
+        <div className="border-b border-border p-12 md:p-16">
+          <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
+            שירותים
           </h2>
+          <div className="h-1 w-20 bg-primary mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            פתרונות חשמל מקיפים לכל סוג של תעשייה. מתכנון משולב דרך ביצוע מקצועי ועד אישורים סופיים.
+            פתרונות חשמל מקיפים. תכנון, ביצוע, אחזקה.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
+        {/* Services Grid - Geometric Blocks */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
+          {services.map((service, idx) => (
             <div
               key={service.title}
-              className="border border-border rounded-lg p-8 hover:shadow-md transition-shadow"
+              className={`border-b border-r border-border p-10 md:p-12 ${
+                idx % 2 === 0 ? "lg:border-r" : ""
+              } ${idx >= services.length - (services.length % 3) ? "" : "border-b"}`}
             >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 border border-primary/30 flex items-center justify-center">
                   <service.icon className="w-6 h-6 text-primary" />
                 </div>
               </div>
 
-              <h3 className="text-xl font-semibold text-foreground mb-3">
+              <h3 className="text-xl font-bold text-foreground mb-3 uppercase tracking-tight">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {service.description}
               </p>
             </div>
