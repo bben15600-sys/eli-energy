@@ -1,6 +1,6 @@
 export const site = {
-  brand: "אלי דדון",
-  brandFull: "אלי דדון | חשמל",
+  brand: "ELI ENERGY",
+  brandFull: "ELI ENERGY",
   ownerName: "אלי דדון",
   licenseNumber: "—",
   tagline: "חשמל לעסק ולבית",
