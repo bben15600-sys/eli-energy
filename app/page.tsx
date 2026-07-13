@@ -1,5 +1,4 @@
 import { About } from "@/components/site/about";
-import { CertificationsStrip } from "@/components/site/certifications-strip";
 import { Contact } from "@/components/site/contact";
 import { SiteFooter } from "@/components/site/footer";
 import { Gallery } from "@/components/site/gallery";
