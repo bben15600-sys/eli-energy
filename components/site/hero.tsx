@@ -1,115 +1,64 @@
-import { ArrowLeft, MessageCircle, Phone, ShieldCheck } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { AnimatedCounter } from "@/components/site/animated-counter";
-import { Magnetic } from "@/components/site/magnetic";
-import { Sparks } from "@/components/site/sparks";
 import { site } from "@/components/site/site-config";
 
 export function Hero() {
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden border-b border-border/60"
-    >
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-grid" />
-        <div className="absolute left-1/2 top-[-10%] h-[520px] w-[80%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,color-mix(in_oklch,var(--primary)_38%,transparent)_0%,transparent_60%)] blur-2xl animate-glow-pulse" />
-        <div className="absolute left-1/2 top-[40%] h-[260px] w-[40%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,color-mix(in_oklch,var(--primary)_25%,transparent)_0%,transparent_60%)] blur-2xl" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-background" />
-      </div>
-      <Sparks />
+    <section id="top" className="border-b border-border bg-background">
+      <div className="mx-auto max-w-7xl px-4 py-24 md:px-6 md:py-32">
+        <div className="grid grid-cols-12 gap-8 items-end">
+          {/* Main headline - left side */}
+          <div className="col-span-12 md:col-span-7">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-none tracking-tight text-foreground mb-8">
+              חשמל תעשייתי,
+              <br />
+              ברמה מקצועית.
+            </h1>
 
-      <div className="mx-auto max-w-6xl px-4 pt-16 pb-20 md:px-6 md:pt-24 md:pb-28">
-        <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <Badge
-            variant="outline"
-            className="animate-appear h-7 gap-1.5 rounded-full border-primary/25 bg-background/70 px-3 text-[13px] text-foreground backdrop-blur"
-            style={{ animationDelay: "0ms" }}
-          >
-            <ShieldCheck className="text-primary" />
-            חשמלאי תעשייתי מוסמך • פארמה וחדרים נקיים
-          </Badge>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-12">
+              20 שנות ניסיון בתשתיות חשמל לפארמה, חדרים נקיים ומתח גבוה. עמידה מלאה בתקנים, בדרישות GMP וכיבוי אש.
+            </p>
 
-          <h1
-            className="animate-appear mt-6 text-5xl font-bold leading-[1.05] tracking-tight text-balance drop-shadow-sm sm:text-6xl md:text-7xl"
-            style={{ animationDelay: "80ms" }}
-          >
-            <span className="font-display block bg-gradient-to-l from-foreground via-foreground to-foreground/70 bg-clip-text tracking-[0.04em] text-transparent">
-              {site.brand}
-            </span>
-            <span className="mt-3 block bg-gradient-to-l from-primary via-primary to-primary/70 bg-clip-text text-transparent">
-              {site.tagline}
-            </span>
-          </h1>
-
-          <p
-            className="animate-appear mx-auto mt-6 max-w-2xl text-balance text-base text-muted-foreground md:text-lg"
-            style={{ animationDelay: "180ms" }}
-          >
-            {site.description}
-          </p>
-
-          <div
-            className="animate-appear mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
-            style={{ animationDelay: "260ms" }}
-          >
-            <Magnetic strength={0.18}>
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 render={<a href={`tel:${site.phone}`} />}
-                className="group relative h-12 gap-2 overflow-hidden px-7 rounded-full text-base shadow-lg shadow-primary/25 ring-1 ring-primary/20 transition-shadow hover:shadow-xl hover:shadow-primary/35"
+                className="h-12 px-8 text-base font-semibold bg-primary text-primary-foreground hover:bg-primary/90"
               >
-                <span
-                  aria-hidden
-                  className="absolute inset-0 -z-10 bg-gradient-to-l from-primary to-primary/85"
-                />
-                <Phone />
+                <Phone className="mr-2" />
                 התקשרו עכשיו
-                <ArrowLeft className="transition-transform group-hover:-translate-x-0.5" />
               </Button>
-            </Magnetic>
-            <Button
-              variant="outline"
-              render={
-                <a
-                  href={`https://wa.me/${site.whatsapp}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                />
-              }
-              className="h-12 gap-2 px-7 rounded-full text-base bg-background/70 backdrop-blur"
-            >
-              <MessageCircle />
-              הודעה בוואטסאפ
-            </Button>
+              <Button
+                variant="outline"
+                render={
+                  <a
+                    href={`https://wa.me/${site.whatsapp}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  />
+                }
+                className="h-12 px-8 text-base font-semibold border border-border"
+              >
+                <MessageCircle className="mr-2" />
+                וואטסאפ
+              </Button>
+            </div>
           </div>
 
-          <dl
-            className="group/stats animate-appear-zoom relative mt-14 grid w-full max-w-2xl grid-cols-3 gap-4 overflow-hidden rounded-2xl border border-border/60 bg-card/60 p-4 text-center shadow-xl shadow-primary/10 backdrop-blur-md md:gap-6 md:p-6"
-            style={{ animationDelay: "420ms" }}
-          >
-            <span
-              aria-hidden
-              className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-l from-transparent via-primary/60 to-transparent"
-            />
-            <span
-              aria-hidden
-              className="animate-shimmer pointer-events-none absolute inset-y-0 -left-1/2 w-1/2 bg-gradient-to-r from-transparent via-primary/8 to-transparent"
-            />
-            <Stat
-              value={
-                <AnimatedCounter value={site.yearsExperience} prefix="+" />
-              }
-              label="שנות ניסיון"
-            />
-            <Stat
-              value={
-                <AnimatedCounter value={site.jobsCompleted} prefix="+" />
-              }
-              label="פרוייקטים"
-            />
-            <Stat value="100%" label="עמידה בתקנים" />
-          </dl>
+          {/* Stats - right side */}
+          <div className="col-span-12 md:col-span-5 grid grid-cols-2 gap-12">
+            <div className="border-r border-border pr-8">
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                {site.yearsExperience}+
+              </div>
+              <p className="text-sm text-muted-foreground">שנות ניסיון</p>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                {site.jobsCompleted}+
+              </div>
+              <p className="text-sm text-muted-foreground">פרוייקטים הושלמו</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

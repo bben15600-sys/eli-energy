@@ -28,38 +28,33 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-40 w-full transition-all duration-300 ${
+      className={`sticky top-0 z-40 w-full border-b ${
         scrolled
-          ? "border-b border-border/60 bg-background/85 shadow-sm shadow-primary/5 backdrop-blur"
-          : "border-b border-transparent bg-background/50 backdrop-blur"
+          ? "border-border bg-background shadow-sm"
+          : "border-border bg-background"
       }`}
     >
-      <div className="mx-auto grid h-16 max-w-6xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 md:px-6">
-        <a href="#top" className="flex items-center gap-2.5 justify-self-start">
+      <div className="mx-auto grid h-16 max-w-7xl grid-cols-[auto_1fr_auto] items-center px-4 md:px-6">
+        <a href="#top" className="flex items-center gap-2.5">
           <BrandMark />
-          <span className="flex flex-col leading-none">
-            <span className="font-display text-base font-bold tracking-[0.08em] md:text-lg">
-              {site.brand}
-            </span>
-            <span className="font-display text-[10px] font-semibold tracking-[0.35em] text-primary md:text-[11px]">
-              SOLUTIONS
-            </span>
+          <span className="font-bold text-lg tracking-tight">
+            {site.brand}
           </span>
         </a>
 
-        <nav className="hidden items-center justify-center gap-7 text-sm font-medium text-muted-foreground md:flex">
+        <nav className="hidden md:flex items-center justify-center gap-8 text-sm font-medium">
           {nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="rounded-md px-1 py-0.5 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
+              className="text-muted-foreground hover:text-foreground transition-colors px-1 py-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded"
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        <div className="flex items-center gap-2 justify-self-end">
+        <div className="flex items-center gap-2">
           <Button
             render={<a href={`tel:${site.phone}`} />}
             className="h-10 gap-2 rounded-full px-4"

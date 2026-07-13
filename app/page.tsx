@@ -9,6 +9,7 @@ import { MobileCtaBar } from "@/components/site/mobile-cta-bar";
 import { Process } from "@/components/site/process";
 import { Services } from "@/components/site/services";
 import { Testimonials } from "@/components/site/testimonials";
+import { TrustSection } from "@/components/site/trust-section";
 import { WhatsAppFloat } from "@/components/site/whatsapp-float";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <SiteHeader />
       <main className="flex-1 pb-16 md:pb-0">
         <Hero />
+        <TrustSection />
         <CertificationsStrip />
         <Services />
         <About />
