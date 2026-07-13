@@ -4,7 +4,6 @@ import {
   Award,
   Building2,
   ClipboardCheck,
-  FlaskConical,
   Gauge,
   Sparkles,
   UserCheck,
@@ -18,40 +17,34 @@ type Bullet = { icon: LucideIcon; title: string; description: string };
 
 const bullets: Bullet[] = [
   {
-    icon: FlaskConical,
-    title: "מומחה פארמה וחדרים נקיים",
-    description:
-      "ניסיון מוכח בתשתיות פארמציות בדרגת ניקיון גבוהה — GMP-ready, ISO 14644, עמידה בדרישות חשמל וכיבוי אש של מתקנים רגולטוריים.",
-  },
-  {
     icon: Award,
-    title: "20 שנות ניסיון בתעשייה",
+    title: "20 שנות ניסיון",
     description:
-      "ניסיון מוכח בעולמות החשמל, התפעול והאחזקה במפעלי תעשייה מובילים בארץ.",
+      "ניסיון מוכח בחשמל תעשייתי ולביתי — מפעלים, משרדים וביתות פרטיים.",
   },
   {
     icon: ClipboardCheck,
     title: "עמידה בכל התקנים",
     description:
-      "מצוי בכל התקנים המחמירים — כיבוי אש, מתח גבוה, חוק החשמל ודרישות הרשויות.",
+      "מצוי בכל התקנים — כיבוי אש, מתח גבוה, חוק החשמל ודרישות הרשויות.",
   },
   {
     icon: Building2,
-    title: "ניהול פרוייקטים מורכבים",
+    title: "ניהול פרוייקטים",
     description:
       "תכנון וביצוע מקצה לקצה — מהאפיון הראשוני ועד המסירה והאישורים.",
   },
   {
     icon: Gauge,
-    title: "אחזקה ומינימום השבתה",
+    title: "אחזקה ותיקון",
     description:
-      "תחזוקת קווי ייצור, תשתיות ומכונות — תכנון לוחות זמנים שמכבד את הייצור.",
+      "שירותי אחזקה תקופתית ותיקון מהיר. זמינות 24/7 לשירותי חירום.",
   },
   {
     icon: UserCheck,
     title: "ליווי מול הרשויות",
     description:
-      "הבנה ויכולת עבודה מול חשמל, כיבוי אש ושאר הגופים הרלוונטיים — מתחילת הפרוייקט עד אישור הסיום.",
+      "הבנה ויכולת עבודה מול חשמל, כיבוי אש ושאר הגופים הרלוונטיים.",
   },
 ];
 
@@ -93,12 +86,12 @@ export function About() {
           </div>
 
           <h2 className="mt-6 bg-gradient-to-l from-foreground via-foreground to-primary/80 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-4xl">
-            חשמל תעשייתי ברמה הגבוהה ביותר
+            חשמל מקצועי לבית ולעסק
           </h2>
           <p className="mt-4 text-muted-foreground md:text-lg">
-            {site.ownerName}, בעל ניסיון של {site.yearsExperience} שנים בעולמות
-            החשמל, התפעול והאחזקה בתעשייה. ידע נרחב בעולמות הפארמה והחדרים
-            הנקיים, ניהול פרוייקטים מורכבים ועמידה בכל התקנים המחמירים.
+            {site.ownerName}, בעל ניסיון של {site.yearsExperience} שנים בחשמל
+            תעשייתי ולביתי. עבודה מהירה, מקצועית ואמינה. ניהול פרוייקטים
+            מורכבים ועמידה בכל התקנים.
           </p>
 
           <ul className="mt-8 space-y-3">
@@ -147,12 +140,9 @@ export function About() {
                 <div className="text-center">
                   <p className="font-display text-xl font-bold tracking-[0.08em] md:text-2xl">
                     {site.brand}
-                    <span className="ms-2 text-sm font-semibold tracking-[0.35em] text-primary">
-                      SOLUTIONS
-                    </span>
                   </p>
                   <p className="mt-2 max-w-xs text-sm text-muted-foreground">
-                    {site.ownerName} · חשמל תעשייתי, פארמה וחדרים נקיים.
+                    {site.ownerName} · חשמל לבית ולעסק
                   </p>
                 </div>
 

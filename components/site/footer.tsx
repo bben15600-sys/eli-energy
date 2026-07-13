@@ -26,13 +26,8 @@ export function SiteFooter() {
         <div className="space-y-3">
           <a href="#top" className="flex items-center gap-2.5">
             <BrandMark />
-            <span className="flex flex-col leading-none">
-              <span className="font-display text-base font-bold tracking-[0.08em]">
-                {site.brand}
-              </span>
-              <span className="font-display text-[10px] font-semibold tracking-[0.35em] text-primary">
-                SOLUTIONS
-              </span>
+            <span className="font-display text-base font-bold tracking-[0.08em]">
+              {site.brand}
             </span>
           </a>
           <p className="max-w-sm text-sm text-muted-foreground">
