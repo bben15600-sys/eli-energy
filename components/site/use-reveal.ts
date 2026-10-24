@@ -21,8 +21,8 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>(
     if (!el) return;
 
     if (typeof IntersectionObserver === "undefined") {
-      setVisible(true);
-      return;
+      const frame = requestAnimationFrame(() => setVisible(true));
+      return () => cancelAnimationFrame(frame);
     }
 
     const observer = new IntersectionObserver(

@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Distributed agent skills, not the Next.js app.
+    ".claude/**",
   ]),
 ]);
 
