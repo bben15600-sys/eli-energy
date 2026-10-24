@@ -1,4 +1,5 @@
 import { ArrowLeft, Phone } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BrandMark } from "@/components/site/brand-mark";
 import { site } from "@/components/site/site-config";
@@ -29,7 +30,7 @@ export default function NotFound() {
 
       <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <Button
-          render={<a href="/" />}
+          render={<Link href="/" />}
           className="h-11 gap-2 rounded-full px-6 text-base"
         >
           חזרה לדף הבית

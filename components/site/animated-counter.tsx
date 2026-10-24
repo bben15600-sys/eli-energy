@@ -22,14 +22,15 @@ export function AnimatedCounter({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (
+    const reduceMotion =
       typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      setDisplay(value);
-      return;
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let frame = 0;
+    if (reduceMotion) {
+      frame = requestAnimationFrame(() => setDisplay(value));
+      return () => cancelAnimationFrame(frame);
     }
-    setDisplay(0);
+    frame = requestAnimationFrame(() => setDisplay(0));
     const observer = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
@@ -50,7 +51,10 @@ export function AnimatedCounter({
       { threshold: 0.4 },
     );
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+    };
   }, [value, duration]);
 
   return (
